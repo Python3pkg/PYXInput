@@ -145,14 +145,14 @@ def main():
         except MaxInputsReachedError:
             break
         else:
-            print('Available:', vController.available_ids())
-            print('This ID:', cons[-1].id)
+            print(('Available:', vController.available_ids()))
+            print(('This ID:', cons[-1].id))
 
         # time.sleep(1)
 
     print('Done, disconnecting controllers.')
     del cons
-    print('Available:', vController.available_ids())
+    print(('Available:', vController.available_ids()))
     time.sleep(2)
 
     print('Testing Value setting')
@@ -162,8 +162,8 @@ def main():
     except MaxInputsReachedError:
         print('Unable to connect controller for testing.')
     else:
-        print('This ID:', con.id)
-        print('Available:', vController.available_ids())
+        print(('This ID:', con.id))
+        print(('Available:', vController.available_ids()))
         print('Setting TriggerR and AxisLx:')
         for x in range(11):
             val = x / 10
@@ -174,7 +174,7 @@ def main():
 
         print('Done, disconnecting controller.')
         del con
-        print('Available:', vController.available_ids())
+        print(('Available:', vController.available_ids()))
         time.sleep(2)
 
 

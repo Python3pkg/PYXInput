@@ -86,7 +86,7 @@ class rController(object):
     @property
     def buttons(self):
         """Returns a list of buttons currently pressed"""
-        return [name for name, value in rController._buttons.items()
+        return [name for name, value in list(rController._buttons.items())
                 if self.gamepad.wButtons & value == value]
 
 
@@ -104,8 +104,8 @@ def main():
     for i in range(3):
         print('Waiting...')
         time.sleep(2.5)
-        print('State: ', con.gamepad)
-        print('Buttons: ', con.buttons)
+        print(('State: ', con.gamepad))
+        print(('Buttons: ', con.buttons))
         time.sleep(0.5)
 
     print('Done!')
